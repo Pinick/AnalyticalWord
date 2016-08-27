@@ -10,6 +10,16 @@ android {
         targetSdkVersion 24
         versionCode 1
         versionName "1.0"
+        multiDexEnabled true
+    }
+    lintOptions {
+        abortOnError false
+    }
+    dexOptions {
+        preDexLibraries = false
+    }
+    defaultConfig {
+        multiDexEnabled true
     }
     buildTypes {
         release {
@@ -23,4 +33,10 @@ dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     testCompile 'junit:junit:4.12'
     compile 'com.android.support:appcompat-v7:24.2.0'
+    compile 'com.android.support:multidex:1.0.1'
+    compile files('libs/poi-3.14-20160307.jar')
+    compile files('libs/poi-ooxml-3.14-20160307.jar')
+    compile files('libs/poi-scratchpad-3.14-20160307.jar')
+    compile files('libs/xmlbeans-2.6.0.jar')
+    compile 'io.reactivex:rxandroid:1.0.1'
 }
