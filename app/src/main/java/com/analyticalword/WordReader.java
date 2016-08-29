@@ -861,7 +861,7 @@ public class WordReader {
 						+ AplicationBaseConfig.BASE_WORD_FILE;// 得到sd卡(扩展设备)的绝对路径+"/"+xiao
 				File dirFile = new File(path);// 获取xiao文件夹地址
 				if (!dirFile.exists()) {// 如果不存在
-					dirFile.mkdir();// 创建目录
+					dirFile.mkdirs();// 创建目录
 				}
 				File myFile = new File(path + File.separator + "file.html");// 获取my.html的地址
 				if (!myFile.exists()) {// 如果不存在
@@ -872,6 +872,7 @@ public class WordReader {
 				}
 				this.htmlPath = myFile.getAbsolutePath();// 返回路径
 			} catch (Exception e) {
+				e.printStackTrace();
 			}
 		}
 	}
